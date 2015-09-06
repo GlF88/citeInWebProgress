@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="js/jquery.fullPage.min.js"></script>
+	<script type="text/javascript" src="js/jquery-animate-css-rotate-scale.js"></script>
+    <script type="text/javascript" src="js/jquery-migrate.js"></script>
+     <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="js/jquery-BubbleEngine.js"></script>
+    <script type="text/javascript" src="js/options-animate-first-slide.js"></script>
+    <link rel="stylesheet"  href="css/lightslider.css"/>
+    <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
+    <script src="js/lightslider.js"></script> 
+</head>
+<style type="text/css">
+	body{
+		text-align: center;
+		font-family: HelveticaNeue;
+	}
+
+ 	@font-face {
+    	font-family: HelveticaNeue; /* Гарнитура шрифта */
+    	src: url(font/HelveticaNeueCyr-Italic.otf); /* Путь к файлу со шрифтом */
+    }
+
+	#text-first-slide{
+		position: relative;
+		text-align: center;
+		margin-top: 5%;
+	}	
+
+	#case-block {
+		width: 5px;
+		height: 5px;
+		z-index: 0 !important;
+		background: red;
+	}
+
+	#text-first-slide img {
+		z-index: 35;
+		width: 28%;
+	}
+
+	#down{
+		margin-top: 40px;
+		text-align: center;
+	}
+
+	#menu-navigation-ul div{ 
+		position: relative;
+		z-index: 35;
+		display: inline;
+		color: #fffeff;
+		font-size: 1.4em;
+		margin: 20px;
+		padding: 5px;
+		transition: 0.5s;
+	}
+
+	#menu-navigation-ul div:hover{
+		cursor: pointer;
+		border-bottom: 2px solid white;
+		transition: 0.5s;
+	}
+
+	#button-add-case{
+		font-size: 17px !important;
+		display: inline-block;
+		padding: 10px 20px;
+		color: white;
+		border: 1px solid white;
+		border-radius: 5px;
+	}
+
+	#head-second-slide{
+		position: relative;
+		top: 3%;
+		text-align: center;
+		color: white;
+		font-size: 2em;
+	}
+
+	#container-img-second-slide img{
+	    width: 17%;
+		margin-top: -16%;
+		margin-right: 10%;
+		margin-left: 10%;
+	}
+
+	#container-info{
+		width: 100%;
+		position: relative;
+		top: 60px;
+		text-align: center;
+	}
+
+	#container-info div {
+		display: inline-block;
+		position: relative;
+		bottom: -100%;
+	}
+
+	.info-block-second-slide:nth-child(1){
+		position: relative;
+		left: -90%;
+	}
+
+	.info-block-second-slide:nth-child(3){
+		position: relative;
+		left: -90%;
+	}
+
+	.info-block-second-slide:nth-child(5){
+		position: relative;
+		left: -90%;
+	}
+
+	.info-block-second-slide:nth-child(7){
+		position: relative;
+		left: -90%;
+	}
+
+	.arrow-second-slide{
+		opacity: 0;
+		position: relative;
+		top: -80px;
+	}
+
+	.arrow-second-slide img{
+		width: 50%;
+	}
+
+	.info-block-second-slide{
+		color: white;
+		font-size: 1em;
+		width: 180px;
+	}
+
+	.info-block-second-slide img{
+		width: 45%;
+		margin-bottom: 20px;
+	}
+
+	#case-second-slide{
+		z-index: 1000;
+		position: relative;
+		bottom: -100%;
+		text-align: center;
+	}
+
+	#case-second-slide img{
+		width: 23%;
+	}
+
+	.slider-img{
+		display: inline-block;
+		margin: 10px;
+	}
+
+	#content-slider li {
+		text-align: center;
+	}
+
+	#head-fourth-slide{
+		text-align: center;
+		font-size: 1.8em;
+		font-style: bold;
+		margin-top: -1%;
+		margin-bottom: 1%;
+		color: #0061ab;
+	}
+
+	#text-fourth-slide{
+		text-align: center; 
+		font-size: 1.1em;
+		color: #6097c5;
+	}
+
+	#img-city-fourth-slide{
+		text-align: center;
+		position: relative;
+		bottom: -70%;
+	}
+
+	#ul-fourth-slide{
+		
+	}
+
+	#ul-fourth-slide li{
+		display: inline-block;
+		color: #6097c5;
+		display: table-cell;
+    	vertical-align: middle;
+    	text-align: left;
+
+	}
+
+	#ul-fourth-slide li img {
+		width: 50px;
+		margin: 15px 15px 5px 35px;
+		opacity: 0;
+	}
+
+	#testImg{
+		display: none;
+		z-index: 1200;
+		position: relative;
+		top: -20%;
+	}
+
+	#test-slider-img{
+		position: relative;
+		bottom: 20%;
+		left: -20%;
+	}
+
+	#section3{
+		background: url(img/bg-three-slide.jpg);
+		background-repeat: repeat;
+	}
+</style>
+<body>
+
+	<div id="fullpage">
+		<div class="section" id="section1"> 
+		<div id="case-block"></div>
+			<div id="menu-navigation">  
+				<div id="menu-navigation-ul">
+					<div id="img-first-slide"> <img src="img/Цифроград24_main_pravki.png" width="80"> </div>
+					<div style="margin-left: 60px;"> Главная </div>
+					<div> Галерея </div>
+					<div style="margin-right: 40px;"> Контакты</div>
+					<div> <div id="button-add-case"> Создать кейс </div></div>
+				</div>
+			</div> 
+			<div id="text-first-slide" > <img src="img/txt.png"> </div>
+			<a href="#secondPage"><div id="down"> <img src="img/down.png" width="20"> </div></a>
+		</div>
+		<div class="section" id="section2">
+			<div id="head-second-slide"> 4 простых шага... </div>
+			<div id="container-info"> 
+				<div class="info-block-second-slide"> <img src="svg/info_1.svg"> <br> Выберете модель телефона</div>
+				<div class="arrow-second-slide"> <img src="img/arrow.png"> </div>
+				<div class="info-block-second-slide"> <img src="svg/info_2.svg"> <br> Подберите картинку или выберете свою</div>
+				<div class="arrow-second-slide"> <img src="img/arrow.png"> </div>
+				<div class="info-block-second-slide"> <img src="svg/info_3.svg"> <br> Отредактируйте положение картинки</div>
+				<div class="arrow-second-slide"> <img src="img/arrow.png"> </div>
+				<div class="info-block-second-slide"> <img src="svg/info_4.svg"> <br> Отпрвьте чехол на печать </div>
+			</div>
+			<div id="case-second-slide"> <img src="img/phone.png" width="230"></div>
+			<div id="container-img-second-slide">
+				<img id="img-slide-second1" src="img/photo-slider1.png">
+				<img id="img-slide-second2" src="img/photo-slider2.png"> 
+				<img id="img-slide-second3" src="img/photo-slider3.png">
+				<img id="img-slide-second4" src="img/photo-slider4.png">
+				<img id="img-slide-second5" src="img/photo-slider5.png"> 
+				<img id="img-slide-second6" src="img/photo-slider6.png">
+			</div>
+		</div>
+		<div class="section" id="section3">
+				<!-- <div id="testImg"><img src="img/photo-slider1.png" width="170"></div> -->
+			  	<div class="item">
+                <ul id="content-slider" class="content-slider">
+                <li>
+                
+                    <div class="slider-img" id="test-slider-img"> <img src="img/photo-slider1.png" width="170"></div>
+					<div class="slider-img"> <img src="img/photo-slider2.png" width="170" ></div>
+					<div class="slider-img"> <img src="img/photo-slider3.png" width="170"></div>
+					<div class="slider-img"> <img src="img/photo-slider4.png" width="170"></div> <br>
+					<div class="slider-img"> <img src="img/photo-slider5.png" width="170" ></div>
+					<div class="slider-img"> <img src="img/photo-slider6.png" width="170"></div>
+					<div class="slider-img"> <img src="img/photo-slider7.png" width="170" ></div>
+					<div class="slider-img"> <img src="img/photo-slider8.png" width="170"></div>
+
+                </li>
+                <li>
+                    <div class="slider-img"> <img src="img/photo-slider1.png" width="170"></div>
+					<div class="slider-img"> <img src="img/photo-slider2.png" width="170" ></div>
+					<div class="slider-img"> <img src="img/photo-slider3.png" width="170"></div>
+					<div class="slider-img"> <img src="img/photo-slider4.png" width="170"></div> <br>
+					<div class="slider-img"> <img src="img/photo-slider5.png" width="170" ></div>
+					<div class="slider-img"> <img src="img/photo-slider6.png" width="170"></div>
+					<div class="slider-img"> <img src="img/photo-slider7.png" width="170" ></div>
+					<div class="slider-img"> <img src="img/photo-slider8.png" width="170"></div>
+                </li>
+                <li>
+                    <div class="slider-img"> <img src="img/photo-slider1.png" width="170"></div>
+					<div class="slider-img"> <img src="img/photo-slider2.png" width="170" ></div>
+					<div class="slider-img"> <img src="img/photo-slider3.png" width="170"></div>
+					<div class="slider-img"> <img src="img/photo-slider4.png" width="170"></div> <br>
+					<div class="slider-img"> <img src="img/photo-slider5.png" width="170" ></div>
+					<div class="slider-img"> <img src="img/photo-slider6.png" width="170"></div>
+					<div class="slider-img"> <img src="img/photo-slider7.png" width="170" ></div>
+					<div class="slider-img"> <img src="img/photo-slider8.png" width="170"></div>
+                </li>
+            </ul>
+        </div>
+		</div>
+		<div class="section" id="section4">
+			<div id="head-fourth-slide"> Где получить?! </div>
+			<div id="text-fourth-slide"> Создать заказ или получить уже созданный кейс, <br> который был оформлен 
+			через интернет можно в аэропорту Пулково-2</div> <br>
+			<center> <ul id="ul-fourth-slide">
+				<li><img src="img/map.png"></li>
+				<li> <b> Адрес в СПБ </b><br> Пулковское шоссе, 41</li>
+				<li><img src="img/mail.png"></li>
+				<li><b>E-mail </b><br> hello@cifrograd24.ru</li>
+				<li><img src="img/tel.png"></li>
+				<li> <b>Телефон </b><br> 8 800 365-12-31</li>
+			</ul> </center> <br>
+			<div id="img-city-fourth-slide"><img src="img/city.png" width="60%"></div>
+		</div>
+	</div>
+
+
+</body>
+<script>
+	$(document).ready(function($) {
+		$("#fullpage").fullpage({
+			sectionsColor:['#01c1f7','#e95447','#40393a', '#fffeff'],
+			anchors:['firstPage','secondPage','3rdPage', '4rdPage'],
+			menu:'#menu',
+			scrollBar:false,
+			navigation:true,
+			navigationTooltips:['Секция 1','Секция 2','Секция 3', 'секция 4'],
+			slidesNavigation:true,
+			navigationPosition:'left',
+			loopTop:true,
+			loopBottom:true,
+			loopHorizontal:false,
+			
+			afterResize:function(link,index) {
+				},
+			afterLoad:function(link,index) {
+				
+				if(index == 2) {
+
+
+					function animateInfo () {
+					$('div.info-block-second-slide:nth-child(7)').animate({"left": "0%"}, "easeOutBounce", function(){
+					    $('div.info-block-second-slide:nth-child(5)').animate({"left": "0%"}, "easeOutBounce", function(){
+					        $('div.info-block-second-slide:nth-child(3)').animate({"left": "0%"}, "easeOutBounce", function(){
+					        	$('div.info-block-second-slide:nth-child(1)').animate({"left": "0%"}, "easeOutBounce", function() {
+					        		$(".arrow-second-slide").animate({"opacity": "1"}, "slow")
+					        	});
+					        });
+					    });
+					});
+					};
+
+					$("#img-slide-second1").animate({rotate: '11deg'}, "easeOutExpo");
+					$("#img-slide-second2").animate({rotate: '-11deg'}, "easeOutExpo");
+					$("#img-slide-second3").animate({rotate: '-17deg'}, "easeOutExpo");
+					$("#img-slide-second4").animate({rotate: '17deg'}, "easeOutExpo");
+					$("#img-slide-second5").animate({rotate: '-27deg'}, "easeOutExpo");
+					$("#img-slide-second6").animate({rotate: '27deg'}, "easeOutExpo", function () {
+						$("#case-second-slide").animate({"bottom": '-25%'}, 1100, function () {
+							animateInfo ();
+						});
+					});
+
+					// $("#img-slide-second1").animate({rotate: '11deg'}, 700, function () {
+					// 	$("#img-slide-second5").animate({rotate: '-27deg'}, 700);
+					// });
+					// $("#img-slide-second3").animate({rotate: '-17deg'}, 700, function () {
+					// 	$("#case-second-slide").animate({"bottom": '-25%'}, 700);
+					// });
+					// $("#img-slide-second4").animate({rotate: '17deg'}, 700, function () {
+					// 	$("#img-slide-second2").animate({rotate: '-11deg'}, 700);
+					// });
+					// $("#img-slide-second6").animate({rotate: '27deg'}, 700, function () {
+					// 	$("#case-second-slide").animate({"bottom": '-25%'}, 1100, function () {
+					// 		animateInfo ();
+					// 	});
+					// });
+				}
+				if(link == '3rdPage') {
+						$("#test-slider-img").animate({"left": "0%"}, 1000);
+				}		
+				if(link == '4rdPage') {
+						$("#img-city-fourth-slide").animate({"bottom": "0%"}, "easeOutBounce", function(){
+							$("#ul-fourth-slide img").animate({"opacity": "1"}, 700);
+						});
+				}			
+			}
+		});
+			$("#content-slider").lightSlider({
+                loop:false,
+                keyPress:true,
+                item:1,
+                controls: false
+            });
+
+	})
+</script>
+</html>
