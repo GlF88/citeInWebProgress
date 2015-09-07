@@ -34,7 +34,6 @@
 		width: 5px;
 		height: 5px;
 		z-index: 0 !important;
-		background: red;
 	}
 
 	#text-first-slide img {
@@ -58,10 +57,10 @@
 		transition: 0.5s;
 	}
 
-	#menu-navigation-ul div:hover{
+	.link-slide-first:hover{
 		cursor: pointer;
-		border-bottom: 2px solid white;
-		transition: 0.5s;
+		border-bottom: 1px solid white;
+		transition: 0.3s;
 	}
 
 	#button-add-case{
@@ -81,7 +80,12 @@
 		font-size: 2em;
 	}
 
+	#container-img-second-slide{
+		height: 30%;
+	}
+
 	#container-img-second-slide img{
+		position: relative;
 	    width: 17%;
 		margin-top: -16%;
 		margin-right: 10%;
@@ -156,6 +160,20 @@
 	.slider-img{
 		display: inline-block;
 		margin: 10px;
+		margin-right: -20px;
+	}
+
+
+	.slider-img img{
+		width: 77%;
+	}
+
+	#head-three-slide{
+		text-align: center;
+		color: white;
+		font-size: 1.8em;
+		margin-top: 3%;	
+		margin-bottom: 1%;
 	}
 
 	#content-slider li {
@@ -210,15 +228,23 @@
 	}
 
 	#test-slider-img{
-		position: relative;
-		bottom: 20%;
-		left: -20%;
 	}
 
 	#section3{
 		background: url(img/bg-three-slide.jpg);
 		background-repeat: repeat;
 	}
+
+	#button-case{
+		position: absolute;
+		top: 35%;
+		right: -12%;
+	}
+
+	#home-li{
+		opacity: 0;
+	}
+
 </style>
 <body>
 
@@ -228,9 +254,9 @@
 			<div id="menu-navigation">  
 				<div id="menu-navigation-ul">
 					<div id="img-first-slide"> <img src="img/Цифроград24_main_pravki.png" width="80"> </div>
-					<div style="margin-left: 60px;"> Главная </div>
-					<div> Галерея </div>
-					<div style="margin-right: 40px;"> Контакты</div>
+					<div class="link-slide-first" style="margin-left: 60px;"> Главная </div>
+					<div class="link-slide-first"> Галерея </div>
+					<div class="link-slide-first" style="margin-right: 40px;"> Контакты</div>
 					<div> <div id="button-add-case"> Создать кейс </div></div>
 				</div>
 			</div> 
@@ -238,6 +264,7 @@
 			<a href="#secondPage"><div id="down"> <img src="img/down.png" width="20"> </div></a>
 		</div>
 		<div class="section" id="section2">
+		<a><div id="button-case"><img src="img/button.png" width="65%"></div></a>
 			<div id="head-second-slide"> 4 простых шага... </div>
 			<div id="container-info"> 
 				<div class="info-block-second-slide"> <img src="svg/info_1.svg"> <br> Выберете модель телефона</div>
@@ -256,43 +283,46 @@
 				<img id="img-slide-second4" src="img/photo-slider4.png">
 				<img id="img-slide-second5" src="img/photo-slider5.png"> 
 				<img id="img-slide-second6" src="img/photo-slider6.png">
+				<img id="img-slide-second7" src="img/photo-slider7.png">
+				<img id="img-slide-second8" src="img/photo-slider8.png">
 			</div>
 		</div>
 		<div class="section" id="section3">
 				<!-- <div id="testImg"><img src="img/photo-slider1.png" width="170"></div> -->
+				<div id="head-three-slide">Примеры наших чехлов</div>
 			  	<div class="item">
                 <ul id="content-slider" class="content-slider">
-                <li>
+                <li id="home-li" style="height: 530px;">
                 
                     <div class="slider-img" id="test-slider-img"> <img src="img/photo-slider1.png" width="170"></div>
-					<div class="slider-img"> <img src="img/photo-slider2.png" width="170" ></div>
-					<div class="slider-img"> <img src="img/photo-slider3.png" width="170"></div>
-					<div class="slider-img"> <img src="img/photo-slider4.png" width="170"></div> <br>
-					<div class="slider-img"> <img src="img/photo-slider5.png" width="170" ></div>
-					<div class="slider-img"> <img src="img/photo-slider6.png" width="170"></div>
-					<div class="slider-img"> <img src="img/photo-slider7.png" width="170" ></div>
-					<div class="slider-img"> <img src="img/photo-slider8.png" width="170"></div>
+					<div class="slider-img"> <img src="img/photo-slider2.png"  ></div>
+					<div class="slider-img"> <img src="img/photo-slider3.png" ></div>
+					<div class="slider-img"> <img src="img/photo-slider4.png" ></div> <br>
+					<div class="slider-img"> <img src="img/photo-slider5.png"  ></div>
+					<div class="slider-img"> <img src="img/photo-slider6.png" ></div>
+					<div class="slider-img"> <img src="img/photo-slider7.png"  ></div>
+					<div class="slider-img"> <img src="img/photo-slider8.png" ></div>
 
                 </li>
                 <li>
-                    <div class="slider-img"> <img src="img/photo-slider1.png" width="170"></div>
-					<div class="slider-img"> <img src="img/photo-slider2.png" width="170" ></div>
-					<div class="slider-img"> <img src="img/photo-slider3.png" width="170"></div>
-					<div class="slider-img"> <img src="img/photo-slider4.png" width="170"></div> <br>
-					<div class="slider-img"> <img src="img/photo-slider5.png" width="170" ></div>
-					<div class="slider-img"> <img src="img/photo-slider6.png" width="170"></div>
-					<div class="slider-img"> <img src="img/photo-slider7.png" width="170" ></div>
-					<div class="slider-img"> <img src="img/photo-slider8.png" width="170"></div>
+                    <div class="slider-img"> <img src="img/photo-slider1.png"></div>
+					<div class="slider-img"> <img src="img/photo-slider2.png" ></div>
+					<div class="slider-img"> <img src="img/photo-slider3.png"></div>
+					<div class="slider-img"> <img src="img/photo-slider4.png"></div> <br>
+					<div class="slider-img"> <img src="img/photo-slider5.png" ></div>
+					<div class="slider-img"> <img src="img/photo-slider6.png"></div>
+					<div class="slider-img"> <img src="img/photo-slider7.png" ></div>
+					<div class="slider-img"> <img src="img/photo-slider8.png"></div>
                 </li>
                 <li>
-                    <div class="slider-img"> <img src="img/photo-slider1.png" width="170"></div>
-					<div class="slider-img"> <img src="img/photo-slider2.png" width="170" ></div>
-					<div class="slider-img"> <img src="img/photo-slider3.png" width="170"></div>
-					<div class="slider-img"> <img src="img/photo-slider4.png" width="170"></div> <br>
-					<div class="slider-img"> <img src="img/photo-slider5.png" width="170" ></div>
-					<div class="slider-img"> <img src="img/photo-slider6.png" width="170"></div>
-					<div class="slider-img"> <img src="img/photo-slider7.png" width="170" ></div>
-					<div class="slider-img"> <img src="img/photo-slider8.png" width="170"></div>
+                    <div class="slider-img"> <img src="img/photo-slider1.png"></div>
+					<div class="slider-img"> <img src="img/photo-slider2.png" ></div>
+					<div class="slider-img"> <img src="img/photo-slider3.png"></div>
+					<div class="slider-img"> <img src="img/photo-slider4.png"></div> <br>
+					<div class="slider-img"> <img src="img/photo-slider5.png" ></div>
+					<div class="slider-img"> <img src="img/photo-slider6.png"></div>
+					<div class="slider-img"> <img src="img/photo-slider7.png" ></div>
+					<div class="slider-img"> <img src="img/photo-slider8.png"></div>
                 </li>
             </ul>
         </div>
@@ -317,6 +347,7 @@
 </body>
 <script>
 	$(document).ready(function($) {
+
 		$("#fullpage").fullpage({
 			sectionsColor:['#01c1f7','#e95447','#40393a', '#fffeff'],
 			anchors:['firstPage','secondPage','3rdPage', '4rdPage'],
@@ -326,7 +357,7 @@
 			navigationTooltips:['Секция 1','Секция 2','Секция 3', 'секция 4'],
 			slidesNavigation:true,
 			navigationPosition:'left',
-			loopTop:true,
+			loopTop: true,
 			loopBottom:true,
 			loopHorizontal:false,
 			
@@ -342,12 +373,67 @@
 					    $('div.info-block-second-slide:nth-child(5)').animate({"left": "0%"}, "easeOutBounce", function(){
 					        $('div.info-block-second-slide:nth-child(3)').animate({"left": "0%"}, "easeOutBounce", function(){
 					        	$('div.info-block-second-slide:nth-child(1)').animate({"left": "0%"}, "easeOutBounce", function() {
-					        		$(".arrow-second-slide").animate({"opacity": "1"}, "slow")
+					        		$(".arrow-second-slide").animate({"opacity": "1"}, "slow", function () {
+					        			$("#button-case").animate({"right": "2%"}, 500);
+					        		})
 					        	});
 					        });
 					    });
 					});
 					};
+
+						$("#container-img-second-slide").animate({"opacity": "1"}, 300);
+						$("#home-li").animate({"opacity": "0"}, 100);
+						$("#img-slide-second1").animate({   "position": "relative", 
+															"top": "0%",
+															"left": "0%", 
+															"z-index": "10", 
+															scale: "1deg",
+															rotate: '11deg'}, 700);
+						$("#img-slide-second2").animate({   "position": "relative", 
+															"top": "0%",
+															"left": "0%", 
+															"z-index": "10", 
+															scale: "1deg",
+															rotate: '-11deg'}, 700);
+						$("#img-slide-second3").animate({   "position": "relative", 
+															"top": "0%",
+															"left": "0%", 
+															"z-index": "10", 
+															scale: "1deg",
+															rotate: '-17deg'}, 700);
+						$("#img-slide-second4").animate({   "position": "relative", 
+															"top": "0%",
+															"left": "0%", 
+															"z-index": "10", 
+															scale: "1deg",
+															rotate: '17deg'}, 700);
+						$("#img-slide-second5").animate({   "position": "relative", 
+															"top": "0%",
+															"left": "0%", 
+															"z-index": "10", 
+															scale: "1deg",
+															rotate: '-27deg'}, 700);
+						$("#img-slide-second6").animate({   "position": "relative", 
+															"top": "0%",
+															"left": "0%", 
+															"z-index": "10", 
+															scale: "1deg",
+															rotate: '27deg'}, 700);
+						$("#img-slide-second7").animate({   "position": "relative", 
+															"top": "0%",
+															"left": "0%", 
+															"z-index": "10", 
+															scale: "0.55deg",
+															rotate: '-27deg'}, 700);
+						$("#img-slide-second8").animate({   "position": "relative", 
+															"top": "0%",
+															"left": "0%", 
+															"z-index": "10", 
+															scale: "0.55deg",
+															rotate: '27deg'}, 700);
+
+
 
 					$("#img-slide-second1").animate({rotate: '11deg'}, "easeOutExpo");
 					$("#img-slide-second2").animate({rotate: '-11deg'}, "easeOutExpo");
@@ -360,23 +446,67 @@
 						});
 					});
 
-					// $("#img-slide-second1").animate({rotate: '11deg'}, 700, function () {
-					// 	$("#img-slide-second5").animate({rotate: '-27deg'}, 700);
-					// });
-					// $("#img-slide-second3").animate({rotate: '-17deg'}, 700, function () {
-					// 	$("#case-second-slide").animate({"bottom": '-25%'}, 700);
-					// });
-					// $("#img-slide-second4").animate({rotate: '17deg'}, 700, function () {
-					// 	$("#img-slide-second2").animate({rotate: '-11deg'}, 700);
-					// });
-					// $("#img-slide-second6").animate({rotate: '27deg'}, 700, function () {
-					// 	$("#case-second-slide").animate({"bottom": '-25%'}, 1100, function () {
-					// 		animateInfo ();
-					// 	});
-					// });
 				}
 				if(link == '3rdPage') {
-						$("#test-slider-img").animate({"left": "0%"}, 1000);
+						//$("#test-slider-img").animate({"left": "0%"}, 1000);
+
+						$("#img-slide-second1").animate({   "position": "relative", 
+															"top": "210%",
+															"left": "-3%", 
+															"z-index": "10000", 
+															scale: "0.74deg",
+															rotate: '0deg'}, 700);
+
+						$("#img-slide-second2").animate({"position": "relative", 
+															"top": "210%",
+															"left": "-26%", 
+															"z-index": "10000", 
+															scale: "0.75deg", 
+															rotate: '0deg'}, 700);
+
+						$("#img-slide-second3").animate({"position": "relative", 
+															"top": "175%",
+															"left": "26%", 
+															"z-index": "10000", 
+															scale: "0.75deg", 
+															rotate: '0deg'}, 700);
+
+						$("#img-slide-second4").animate({"position": "relative", 
+															"top": "175%",
+															"left": "3%", 
+															"z-index": "10000", 
+															scale: "0.75deg", 
+															rotate: '0deg'}, 700);
+
+						$("#img-slide-second5").animate({"position": "relative", 
+															"top": "228%",
+															"left": "-3%", 
+															"z-index": "10000", 
+															scale: "0.75deg", 
+															rotate: '0deg'}, 700);
+
+						$("#img-slide-second6").animate({"position": "relative", 
+															"top": "226%",
+															"left": "-26%", 
+															"z-index": "10000", 
+															scale: "0.75deg", 
+															rotate: '0deg'}, 700);
+						$("#img-slide-second7").animate({"position": "relative", 
+															"top": "191%",
+															"left": "26%", 
+															"z-index": "10000", 
+															scale: "0.75deg", 
+															rotate: '0deg'}, 700);
+						$("#img-slide-second8").animate({"position": "relative", 
+															"top": "191%",
+															"left": "3%", 
+															"z-index": "10000", 
+															scale: "0.75deg", 
+															rotate: '0deg'}, 700, function () {
+																$("#home-li").animate({"opacity": "1"}, 100, function () {
+																	$("#container-img-second-slide").delay(300).animate({"opacity": "0"}, 1000);
+																})
+															});
 				}		
 				if(link == '4rdPage') {
 						$("#img-city-fourth-slide").animate({"bottom": "0%"}, "easeOutBounce", function(){

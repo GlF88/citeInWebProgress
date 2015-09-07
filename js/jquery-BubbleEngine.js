@@ -87,7 +87,7 @@
           width:    particleSize,
           height:   particleSize,
           Zindex: 0, 
-          opacity: 0.5
+          opacity: 0.5  
         }).appendTo('#case-block');
         div.animate({
           left:     animationEndX,
